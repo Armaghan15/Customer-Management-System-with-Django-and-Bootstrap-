@@ -1,0 +1,23 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<br>
+<div style="display: flex; align-items: center; justify-content: center;" class="row">
+	<div style="display: flex; align-items: center; justify-content: center;" class="col-md-6">
+		<div style="display: flex; align-items: center; justify-content: center;" class="card card-body">
+			
+			<h1 style="text-align: center; color: #469cb6;">Are you sure you want to delete the customer "{{customer.name}}"?</h1>
+
+			<form action="{% url 'delete_customer' customer.id %}", method='POST'>
+				{% csrf_token %}
+				<br>
+				<a class="btn btn-sm btn-info" href="{% url 'home' %}">Cancel</a>
+				<input class="btn btn-sm btn-danger" type="submit" name="Delete Customer" value="Delete Customer">
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<br>
+<h1 style="text-align: center; color: #469cb6;">Update Order</h1>
+
+<br>
+<div style="display: flex; align-items: center; justify-content: center;" class="row">
+	<div style="display: flex; align-items: center; justify-content: center;" class="col-md-6">
+		<div style="display: flex; align-items: center; justify-content: center;" class="card card-body">
+
+			<form action="", method="POST">
+				{% csrf_token %}
+				Customer {{form.customer}}<br>
+				<hr>
+				Product  {{form.product}}<br>
+				<hr>
+				Status   {{form.status}}<br>
+				<hr>
+				<input class="btn btn-sm btn-info ml-5" type="submit" name="CreateOrder" value="Update Order">
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
