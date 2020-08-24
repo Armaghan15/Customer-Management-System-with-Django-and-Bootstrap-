@@ -13,7 +13,6 @@ from .filters import OrderFilter
 # Create your views here.
 
 
-
 # Our User Registration Funtion
 @unauthenticated_user
 def registerPage(request):
@@ -215,6 +214,7 @@ def createOrder(request):
 			return redirect('/')
 	context = {'order': order, 'form': form}
 	return render(request, 'accounts/order_form.html', context)
+
 
 
 # Function for creating a order for a customer on that specific customer's profile page
